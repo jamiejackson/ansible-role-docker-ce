@@ -107,7 +107,7 @@
   changed_when: false
   failed_when: cmd_rhel_extras_repo_enabled.rc not in [ 0, 1 ]
 
-- name: Disable extras Repository (RedHat)
+- name: Enable extras Repository (RedHat)
   shell: "subscription-manager repos --enable=rhel-7-server-extras-rpms"
   become: true
   when: cmd_rhel_extras_repo_enabled.rc == 1 and docker_os_dist == "RedHat"
