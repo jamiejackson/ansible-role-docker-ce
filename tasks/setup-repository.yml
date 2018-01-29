@@ -88,7 +88,7 @@
 - name: Check if rt-beta Repository is enabled (RedHat) # 
   shell: "subscription-manager repos --list-enabled | grep rhel-7-server-rt-beta-rpms"
   become: true
-  register: cmd_rhel_rt_beta_repo_disabled
+  register: cmd_rhel_rt_beta_repo_enabled
   when: docker_os_dist == "RedHat"
   changed_when: false
   failed_when: cmd_rhel_rt_beta_repo_enabled.rc not in [ 0, 1 ]
